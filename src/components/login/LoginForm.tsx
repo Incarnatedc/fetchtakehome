@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { isValidEmail } from "../../util/util";
-import InputForm from "./InputForm";
 import { User } from "../../service/types";
 import { login } from "../../service/auth";
 import { Navigate } from "react-router-dom";
+import InputForm from "./InputForm";
 
 const AUTH_ERROR_MESSAGE = "Invalid credentials.";
 

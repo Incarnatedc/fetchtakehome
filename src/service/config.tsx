@@ -1,0 +1,1 @@
+export const BASE_URL:string = "https://frontend-take-home-service.fetch.com";

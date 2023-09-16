@@ -1,5 +1,8 @@
+import Header from "../components/dogs/Header";
 export default function DogsList() {
   return (
-    <h1>My Dogs List Page</h1>
+    <>
+      <Header />
+    </>
   );
 }
