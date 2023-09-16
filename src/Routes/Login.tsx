@@ -1,5 +1,14 @@
+import LoginForm from "../components/login/LoginForm";
+
 export default function Login() {
+  //Now hardcoded redirect route :(
+  const onLoginRoute:string = '/';
   return (
-    <h1>My Login Page</h1>
+    <div className="h-screen flex">
+      <div className="hidden lg:flex w-full lg:w-1/2 justify-around items-center"></div>
+      <div className="flex w-full lg:w-1/2 justify-center items-center bg-gray-200 space-y-8">
+        <LoginForm redirectTo={onLoginRoute} />
+      </div>
+    </div>
   );
 }

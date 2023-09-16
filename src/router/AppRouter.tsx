@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "../Routes/Login";
-import DogsList from "../Routes/DogsList";
+import Login from "../routes/Login";
+import DogsList from "../routes/DogsList";
 
 export default function AppRouter(){
   return (
