@@ -22,11 +22,25 @@ export interface MainContextValue {
 	state: MainState
 	dispatch: React.Dispatch<MainActions>
 }
+
+export interface SortValue {
+  field: string;
+  value: 'asc' | 'desc'
+}
+
+// I'm running out of ideas of names :(
+export interface CurrentSearch {
+  next: string;
+  resultIds: [];
+  total: number
+}
 // Main state of the app
 export interface MainState {
+  dogsIDs: string[];
   searchResults: Dog[];
   favoriteDogs: Dog[];
   matchDog: Dog | null;
+  searchDogs: CurrentSearch
   filters: {
     breeds: string[];
     sortField: string;
@@ -35,8 +49,13 @@ export interface MainState {
     itemsPerPage: number;
   };
 }
-// Actions of the app
 
+export interface SetSortSetting {
+  type: 'setSortSetting';
+  payload: SortValue
+}
+
+// Actions of the app
 export interface AddBreed {
   type: 'addBreed';
   payload: string
@@ -47,12 +66,44 @@ export interface RemoveBreed {
   payload: string
 }
 
-export interface SearchDogs {
-  type: 'searchDogs';
-  
+export interface SetSearchResults {
+  type: 'setSearchResults';
+  payload: Dog[]
+}
+
+export interface SetDogsSearch {
+  type: 'setDogsSearch';
+  payload: CurrentSearch
+}
+
+export interface SetDogsIDs {
+  type: 'setDogsIDs';
+  payload: string[]
+}
+
+export interface AddFavoriteDog {
+  type: 'addFavoriteDog';
+  payload: Dog
+}
+
+export interface RemoveFavoriteDog {
+  type: 'removeFavoriteDog';
+  payload: Dog
+}
+
+export interface ResetBreedFilter {
+  type: 'resetBreedFilter',
+  payload: null
 }
 
 export type MainActions = (
   AddBreed |
-  RemoveBreed
+  RemoveBreed |
+  SetDogsIDs |
+  SetSearchResults |
+  AddFavoriteDog |
+  RemoveFavoriteDog |
+  SetSortSetting |
+  SetDogsSearch | 
+  ResetBreedFilter
 )

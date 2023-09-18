@@ -1,7 +1,7 @@
 import { User } from "./types";
 import { BASE_URL } from "./config";
 
-export const login = async (user:User) => {
+export const login = async (user: User) => {
   const uri = '/auth/login';
   const url = `${BASE_URL}${uri}`
   try{

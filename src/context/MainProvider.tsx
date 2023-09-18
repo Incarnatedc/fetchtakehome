@@ -5,12 +5,18 @@ import { MainContextValue } from "./types";
 
 const initialState: MainState = {
   searchResults: [],
+  searchDogs: {
+    next: '',
+    resultIds: [],
+    total: 0
+  },
+  dogsIDs: [],
   favoriteDogs: [],
   matchDog: null,
   filters: {
     breeds: [],
     currentPage: 1,
-    itemsPerPage: 20,
+    itemsPerPage: 40,
     sortDirection: 'asc',
     sortField: 'breed'
   },

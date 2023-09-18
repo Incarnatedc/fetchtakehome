@@ -10,7 +10,6 @@ export default function BreedItem({name, ...props}: BreedItemProps) {
   const {state, dispatch} = useContext(MainContext);
   const isChecked = state.filters.breeds.includes(name);
   const handleChange = () => {
-    console.log("Handlechange");
     if (isChecked) {
       // If the breed is already in the filters, remove it
       dispatch({ type: 'removeBreed', payload: name });
